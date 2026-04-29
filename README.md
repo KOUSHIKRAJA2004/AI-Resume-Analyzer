@@ -174,5 +174,44 @@ Fixes applied:
 
 ---
 
+## 🤖 Use of AI During Development
+
+### Where AI was used
+
+AI was used mainly in the following parts of the project:
+
+- Resume analysis (core feature)
+- Generating structured feedback (score, summary, strengths, etc.)
+- Initial prompt design
+- Assisting in debugging and improving code structure during development
+
+---
+
+### How AI was used
+
+A local LLM (via Ollama) was used to analyze resume content and generate feedback.
+
+Instead of relying on direct JSON output (which was inconsistent), the model was guided to produce structured text, which was then parsed into a usable format.
+
+AI tools were also used during development to:
+- speed up initial coding
+- explore different approaches for parsing and validation
+- refine prompt design
+
+---
+
+### What was verified or fixed manually
+
+Several issues required manual intervention:
+
+- The model often returned invalid or incomplete JSON → replaced with structured text parsing
+- Some outputs were too generic → added validation and post-processing logic
+- Job description matching initially gave poor results → improved using skill-based matching
+- Incorrect skill detection (e.g., treating Django/Flask as separate mandatory skills) → fixed using grouped skill logic
+
+Overall, AI helped accelerate development, but the final system required manual corrections to ensure reliability and meaningful output.
+
+---
+
 ## 🎯 Final Note
 This project focuses on **practical AI usage**, not just calling an API. The main effort was in handling unreliable AI output and making the system stable and usable.
